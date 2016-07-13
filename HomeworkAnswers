@@ -1,0 +1,211 @@
+-- Basics:
+-- Challenge 1
+
+SELECT population FROM world
+  WHERE name = 'Germany'
+
+-- Challenge 2
+
+SELECT name, population FROM world
+  WHERE name IN ('Ireland', 'Iceland', 'Denmark');
+  
+  -- Challenge 3
+  
+  SELECT name, area FROM world
+  WHERE area BETWEEN 200000 AND 250000
+  
+  -- Name
+  -- Challenge 1
+  
+  SELECT name FROM world
+  WHERE name LIKE 'Y%'
+  
+  -- Challenge 2
+  
+  SELECT name FROM world
+  WHERE name LIKE '%y'
+  
+  -- Challenge 3
+  
+  SELECT name FROM world
+  WHERE name LIKE '%x%'
+  
+  -- Challenge 4
+  
+  SELECT name FROM world
+  WHERE name LIKE '%land'
+  
+    -- Challenge 5
+    
+    SELECT name FROM world
+  WHERE name LIKE 'C%ia'
+  
+  -- Challenge 6
+  
+  SELECT name FROM world
+  WHERE name LIKE '%oo%'
+  
+  -- Challenge 7
+  
+  SELECT name FROM world
+  WHERE name LIKE '%a%a%a%'
+  
+  -- Challenge 8
+  
+  SELECT name FROM world
+ WHERE name LIKE '_t%'
+ORDER BY name
+
+Challenge 9
+
+SELECT name FROM world
+ WHERE name LIKE '%o__o%'
+ 
+ Challenge 10
+ 
+ SELECT name FROM world
+ WHERE name LIKE '____'
+ 
+ Challenge 11
+ 
+ SELECT name
+  FROM world
+ WHERE name LIKE capital
+ 
+ Challenge 12
+ 
+ SELECT name
+  FROM world
+ WHERE capital LIKE concat(name,' City')
+ 
+ challenge 13
+ 
+ challenge 14
+ 
+ challenge 15
+ 
+ From World
+ 
+ challenge 1
+ 
+ SELECT name, continent, population FROM world
+ 
+ challenge 2
+ 
+ SELECT name FROM world
+WHERE population>200000000
+
+challenge 3
+
+SELECT name,gdp/population FROM world
+WHERE population>200000000
+
+challenge 4
+
+select name,population/1000000 from world
+where continent = 'South America'
+
+challenge 5
+
+select name,population from world
+where name = 'France' or name='Germany' or name='Italy'
+
+challenge 6
+
+select name from world
+where name like "United%"
+
+challenge 7
+
+select name,population,area from world
+where area > 3000000 or
+population > 250000000
+
+challenge 8
+
+select name,population,area from world
+where area > 3000000 xor
+population > 250000000
+
+challenge 9
+
+select name,round(population/1000000,2),round(gdp/1000000000,2)
+from world
+where continent = "South America"
+
+challenge 10 --  wrong
+
+select name,round(gdp/population) from world 
+where gdp >= 100000000000
+
+Nobel table
+
+challenge 1
+
+SELECT yr, subject, winner
+  FROM nobel
+ WHERE yr = 1950
+ 
+ challenge 2
+ 
+ SELECT winner
+  FROM nobel
+ WHERE yr = 1962
+   AND subject = 'Literature'
+   
+   challenge 3
+   
+   select yr,subject from nobel
+where winner = 'Albert Einstein'
+
+challenge 4
+
+select winner from nobel
+where subject = 'Peace' and
+yr >= 2000
+
+challenge 5
+
+select yr,subject,winner from nobel
+where yr >= 1980 and
+yr <= 1989 and subject = 'Literature'
+
+challenge 6
+
+SELECT * FROM nobel
+ WHERE winner = 'Theodore Roosevelt' or
+winner = 'Woodrow Wilson' or winner = 'Jimmy Carter'
+
+challenge 7
+
+select winner from nobel
+where winner like('John %')
+
+challenge 8
+
+select * from nobel
+where (subject = 'Physics' and yr = 1980) or
+(subject = 'Chemistry' and yr = 1984)
+
+challenge 9
+
+select * from nobel
+where (yr = 1980) and !((subject = 'Chemistry') or
+(subject = 'Medicine'))
+
+challenge 10
+
+select * from nobel
+where ((subject = 'Medicine') and (yr < 1910)) or
+((subject = 'Literature') and (yr >= 2004))
+
+challenge 11
+
+Challenge 12
+
+select * from nobel
+where winner = 'Eugene O''Neill'
+
+
+  
+  
