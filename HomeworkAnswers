@@ -2,7 +2,7 @@
 -- Challenge 1
 
 SELECT population FROM world
-  WHERE name = 'Germany'
+  WHERE name = 'Germany';
 
 -- Challenge 2
 
@@ -12,18 +12,18 @@ SELECT name, population FROM world
   -- Challenge 3
   
   SELECT name, area FROM world
-  WHERE area BETWEEN 200000 AND 250000
+  WHERE area BETWEEN 200000 AND 250000;
   
   -- Name
   -- Challenge 1
   
   SELECT name FROM world
-  WHERE name LIKE 'Y%'
+  WHERE name LIKE 'Y%';
   
   -- Challenge 2
   
   SELECT name FROM world
-  WHERE name LIKE '%y'
+  WHERE name LIKE '%y';
   
   -- Challenge 3
   
@@ -70,19 +70,30 @@ SELECT name FROM world
  
  SELECT name
   FROM world
- WHERE name LIKE capital
+ WHERE name = capital
  
  Challenge 12
  
  SELECT name
   FROM world
- WHERE capital LIKE concat(name,' City')
+ WHERE capital = concat(name,' City')
  
  challenge 13
  
+ select capital,name from world
+ where capital like concat(%,name,%)
+ 
  challenge 14
  
+ select capital,name 
+ from world
+ where capital like concat(name,'_%')
+ 
  challenge 15
+ 
+ select name,replace(capital,name," ") as extention
+ from world
+ where capital like concat(name,'_%')
  
  From World
  
@@ -97,12 +108,12 @@ WHERE population>200000000
 
 challenge 3
 
-SELECT name,gdp/population FROM world
+SELECT name,gdp/population as gdppercapita  FROM world
 WHERE population>200000000
 
 challenge 4
 
-select name,population/1000000 from world
+select name,population/1000000  from world
 where continent = 'South America'
 
 challenge 5
@@ -113,7 +124,7 @@ where name = 'France' or name='Germany' or name='Italy'
 challenge 6
 
 select name from world
-where name like "United%"
+where name like "%United%"
 
 challenge 7
 
@@ -129,7 +140,7 @@ population > 250000000
 
 challenge 9
 
-select name,round(population/1000000,2),round(gdp/1000000000,2)
+select name,round(population/1000000,2) as popinmillions,round(gdp/1000000000,2) as gdpinbillions
 from world
 where continent = "South America"
 
@@ -201,10 +212,19 @@ where ((subject = 'Medicine') and (yr < 1910)) or
 
 challenge 11
 
+select * from nobel
+where winner = "pe
+
 Challenge 12
 
 select * from nobel
 where winner = 'Eugene O''Neill'
+
+challenge 14 
+
+select winner, subject from nobel
+where yr=1984
+order by subject in ('physics','Chemistry'),subject,winner
 
 
   
